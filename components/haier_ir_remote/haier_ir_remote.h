@@ -2,6 +2,7 @@
 
 #include "esphome/core/component.h"
 #include "esphome/components/climate/climate.h"
+#include "haier_protocol.h"
 
 namespace esphome {
 namespace haier_ir_remote {
@@ -15,6 +16,9 @@ class HaierIRRemoteClimate : public climate::Climate,
  protected:
   climate::ClimateTraits traits() override;
   void control(const climate::ClimateCall &call) override;
+
+ private:
+  HaierProtocol protocol_;
 };
 
 }  // namespace haier_ir_remote
